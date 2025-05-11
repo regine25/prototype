@@ -15,9 +15,9 @@ else:
     st.success(f"✅ Excel file found: {file_path}")
 
 # --- Load Excel File ---
-@st.cache_data
+@st.cache_data(ttl=600)  # Set cache timeout (600 seconds = 10 minutes)
 def load_schedule():
-    return pd.read_excel(file_path)
+    return pd.read_excel(file_path, engine="openpyxl")
 
 df = load_schedule()
 
