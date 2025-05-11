@@ -137,3 +137,14 @@ if "authenticated_user" not in st.session_state:
 
 st.title("📅 School Schedule Dashboard")
 # Add dashboard features here
+import streamlit as st
+import pandas as pd
+
+# Load the Excel file
+file_path = "generated_schedulepro.xlsx"
+df = pd.read_excel(file_path, engine="openpyxl")
+
+# Streamlit App UI
+st.title("📅 Scheduling Dashboard")
+st.write("Here’s the uploaded schedule data:")
+st.dataframe(df)  # Displays the DataFrame interactively
