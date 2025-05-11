@@ -7,7 +7,7 @@ import os
 st.set_page_config(page_title="School Schedule Dashboard", layout="wide")
 
 # --- Check if Excel file exists ---
-file_path = "Generated_Scheduleprooooo.xlsx"
+file_path = "generated_schedulepro.xlsx"
 if not os.path.exists(file_path):
     st.error(f"❌ File not found: {file_path}")
     st.stop()  # Stop the app here if the file doesn't exist
